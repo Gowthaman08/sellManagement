@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: electroGrid-deployment
+  labels:
+    app: electroGrid
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: electroGrid
+  template:
+    metadata:
+      labels:
+        app: electroGrid
+    spec:
+      containers:
+      - name: electroGrid
+        image: harshini1995/electro:latest
+        ports:
+        - containerPort: 8080
