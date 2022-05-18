@@ -22,11 +22,6 @@ public class Seller {
 	
 	@NotNull
 	private String name;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy = "seller")
-	private List<Sale> sales;
-	
 	public long getId() {
 		return id;
 	}
@@ -41,13 +36,5 @@ public class Seller {
 	
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public List<Sale> getSales() {
-		return sales;
-	}
-
-	public void setSales(List<Sale> sales) {
-		this.sales = sales;
 	}
 }

@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: electroGrid-deployment
+  name: k8s-docker-deployment
   labels:
-    app: electroGrid
+    app: k8s-docker
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: electroGrid
+      app: k8s-docker
   template:
     metadata:
       labels:
-        app: electroGrid
+        app: k8s-docker
     spec:
       containers:
-      - name: electroGrid
-        image: harshini1995/electro:latest
+      - name: k8s-docker
+        image: gowthaman02/sellmanagement
         ports:
         - containerPort: 8080
